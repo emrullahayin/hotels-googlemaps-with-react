@@ -1,11 +1,15 @@
 import React from "react";
-import { Button, Header, Image, Modal } from "semantic-ui-react";
+import { Header, Modal, Button } from "semantic-ui-react";
 
 const MapModal = props => {
-  const { open } = props;
-
+  const { open, handleClick } = props;
   return (
-    <Modal dimmer="blurring" open={open} size="fullscreen">
+    <Modal
+      dimmer="blurring"
+      open={open}
+      size="fullscreen"
+      onClose={handleClick(false)}
+    >
       <Modal.Header>Select a Photo</Modal.Header>
       <Modal.Content>
         <Modal.Description>
@@ -17,6 +21,11 @@ const MapModal = props => {
           <p>Is it okay to use this photo?</p>
         </Modal.Description>
       </Modal.Content>
+      <Modal.Actions>
+        <Button color="black" onClick={handleClick(false)}>
+          Close
+        </Button>
+      </Modal.Actions>
     </Modal>
   );
 };

@@ -6,15 +6,18 @@ import MapModal from "./components/MapModal";
 
 const App = () => {
   const [open, setOpen] = useState(false);
-  const handleClick = () => {
-    setOpen(true);
+
+  const handleClick = value => e => {
+    e.preventDefault();
+    setOpen(value);
   };
+
   return (
     <div className="App">
-      <Button inverted primary onClick={handleClick}>
+      <Button inverted primary onClick={handleClick(true)}>
         Open Map
       </Button>
-      <MapModal open={open} />
+      <MapModal open={open} handleClick={handleClick} />
     </div>
   );
 };
