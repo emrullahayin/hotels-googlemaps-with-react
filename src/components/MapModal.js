@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Modal, Button } from "semantic-ui-react";
+import { Modal, Button } from "semantic-ui-react";
 
 const MapModal = props => {
   const { open, handleClick } = props;
@@ -12,14 +12,7 @@ const MapModal = props => {
     >
       <Modal.Header>Map</Modal.Header>
       <Modal.Content>
-        <Modal.Description>
-          <Header>Default Profile Image</Header>
-          <p>
-            We've found the following gravatar image associated with your e-mail
-            address.
-          </p>
-          <p>Is it okay to use this photo?</p>
-        </Modal.Description>
+        <div id="map" />
       </Modal.Content>
       <Modal.Actions>
         <Button color="black" onClick={handleClick(false)}>
