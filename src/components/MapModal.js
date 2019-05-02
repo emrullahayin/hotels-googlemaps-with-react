@@ -10,7 +10,7 @@ const MapModal = props => {
       size="fullscreen"
       onClose={handleClick(false)}
     >
-      <Modal.Header>Select a Photo</Modal.Header>
+      <Modal.Header>Map</Modal.Header>
       <Modal.Content>
         <Modal.Description>
           <Header>Default Profile Image</Header>
