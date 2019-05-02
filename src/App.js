@@ -5,7 +5,7 @@ import { Button } from "semantic-ui-react";
 const App = () => {
   return (
     <div className="App">
-      <Button>Blurring</Button>
+      <Button inverted primary>Open Map</Button>
     </div>
   );
 };
