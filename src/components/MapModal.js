@@ -5,7 +5,7 @@ const MapModal = props => {
   const { open } = props;
 
   return (
-    <Modal dimmer="blurring" open={open}>
+    <Modal dimmer="blurring" open={open} size="fullscreen">
       <Modal.Header>Select a Photo</Modal.Header>
       <Modal.Content>
         <Modal.Description>
