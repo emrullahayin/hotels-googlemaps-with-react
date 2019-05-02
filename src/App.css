@@ -14,7 +14,7 @@
 .App:before {
   content: '';
   background: linear-gradient(52deg, #40e0d0, #413bff);
-  opacity: 0.8;
+  opacity: 0.5;
   position: absolute;
   height: 100%;
   width: 100%;
