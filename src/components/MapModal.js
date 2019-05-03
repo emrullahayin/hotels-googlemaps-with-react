@@ -19,7 +19,7 @@ const MapModal = props => {
       onClose={handleClick(false)}
     >
       <Modal.Actions>
-        <Button color="black" onClick={handleClick(false)}>
+        <Button color="blue" onClick={handleClick(false)}>
           Close
         </Button>
       </Modal.Actions>
@@ -27,7 +27,7 @@ const MapModal = props => {
         <div id="map">
           <Map
             google={props.google}
-            zoom={12}
+            zoom={10}
             style={mapStyles}
             initialCenter={{
               lat: 35.37865,
@@ -41,5 +41,5 @@ const MapModal = props => {
 };
 
 export default GoogleApiWrapper({
-  apiKey: "YOUR_GOOGLE_API_KEY_GOES_HERE"
+  apiKey: "AIzaSyAsltXKoovLalXgYA1v9ltsOUuTiwhPHv0"
 })(MapModal);
