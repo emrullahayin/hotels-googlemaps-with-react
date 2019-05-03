@@ -4,8 +4,8 @@ import { Map, GoogleApiWrapper } from "google-maps-react";
 import { Modal, Button } from "semantic-ui-react";
 
 const mapStyles = {
-  width: '100%',
-  height: '100%'
+  width: "100%",
+  height: "100%"
 };
 
 const MapModal = props => {
@@ -27,11 +27,11 @@ const MapModal = props => {
         <div id="map">
           <Map
             google={props.google}
-            zoom={14}
+            zoom={12}
             style={mapStyles}
             initialCenter={{
-              lat: -1.2884,
-              lng: 36.8233
+              lat: 35.37865,
+              lng: 34.08991
             }}
           />
         </div>
