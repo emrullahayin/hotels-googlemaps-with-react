@@ -1,8 +1,16 @@
 import React from "react";
-import { Header, Modal, Button } from "semantic-ui-react";
+import { Map, GoogleApiWrapper } from "google-maps-react";
+
+import { Modal, Button } from "semantic-ui-react";
+
+const mapStyles = {
+  width: "100%",
+  height: "100%"
+};
 
 const MapModal = props => {
   const { open, handleClick } = props;
+  console.log("props", props);
   return (
     <Modal
       dimmer="blurring"
@@ -10,24 +18,28 @@ const MapModal = props => {
       size="fullscreen"
       onClose={handleClick(false)}
     >
-      <Modal.Header>Map</Modal.Header>
-      <Modal.Content>
-        <Modal.Description>
-          <Header>Default Profile Image</Header>
-          <p>
-            We've found the following gravatar image associated with your e-mail
-            address.
-          </p>
-          <p>Is it okay to use this photo?</p>
-        </Modal.Description>
-      </Modal.Content>
       <Modal.Actions>
         <Button color="black" onClick={handleClick(false)}>
           Close
         </Button>
       </Modal.Actions>
+      <Modal.Content>
+        <div id="map">
+          <Map
+            google={props.google}
+            zoom={12}
+            style={mapStyles}
+            initialCenter={{
+              lat: 35.37865,
+              lng: 34.08991
+            }}
+          />
+        </div>
+      </Modal.Content>
     </Modal>
   );
 };
 
-export default MapModal;
+export default GoogleApiWrapper({
+  apiKey: "YOUR_GOOGLE_API_KEY_GOES_HERE"
+})(MapModal);
