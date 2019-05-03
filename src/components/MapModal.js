@@ -1,8 +1,16 @@
 import React from "react";
+import { Map, GoogleApiWrapper } from "google-maps-react";
+
 import { Modal, Button } from "semantic-ui-react";
+
+const mapStyles = {
+  width: '100%',
+  height: '100%'
+};
 
 const MapModal = props => {
   const { open, handleClick } = props;
+  console.log("props", props);
   return (
     <Modal
       dimmer="blurring"
@@ -10,17 +18,28 @@ const MapModal = props => {
       size="fullscreen"
       onClose={handleClick(false)}
     >
-      <Modal.Header>Map</Modal.Header>
-      <Modal.Content>
-        <div id="map" />
-      </Modal.Content>
       <Modal.Actions>
         <Button color="black" onClick={handleClick(false)}>
           Close
         </Button>
       </Modal.Actions>
+      <Modal.Content>
+        <div id="map">
+          <Map
+            google={props.google}
+            zoom={14}
+            style={mapStyles}
+            initialCenter={{
+              lat: -1.2884,
+              lng: 36.8233
+            }}
+          />
+        </div>
+      </Modal.Content>
     </Modal>
   );
 };
 
-export default MapModal;
+export default GoogleApiWrapper({
+  apiKey: "AIzaSyAsltXKoovLalXgYA1v9ltsOUuTiwhPHv0"
+})(MapModal);
