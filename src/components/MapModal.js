@@ -19,7 +19,7 @@ const MapModal = props => {
       onClose={handleClick(false)}
     >
       <Modal.Actions>
-        <Button color="blue" onClick={handleClick(false)}>
+        <Button color="red" onClick={handleClick(false)}>
           Close
         </Button>
       </Modal.Actions>

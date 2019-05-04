@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <div className="App" style={{ backgroundImage: `url(${logo})` }}>
-      <Button inverted primary onClick={handleClick(true)}>
+      <Button primary onClick={handleClick(true)}>
         Open Map
       </Button>
       <MapModal open={open} handleClick={handleClick} />
