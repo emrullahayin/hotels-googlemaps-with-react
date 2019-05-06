@@ -41,5 +41,5 @@ const MapModal = props => {
 };
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyAsltXKoovLalXgYA1v9ltsOUuTiwhPHv0"
+  apiKey: "your api key"
 })(MapModal);
